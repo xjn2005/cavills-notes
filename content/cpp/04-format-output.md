@@ -1,4 +1,5 @@
 ---
+title: 04 格式化输出
 publish: true
 draft: false
 description: C++ 学习笔记：04-格式化输出。
