@@ -3,7 +3,7 @@
 [![Built with docmd](https://img.shields.io/badge/Built%20with-docmd-0ea5e9)](https://docmd.io/)
 [![GitHub Pages](https://img.shields.io/badge/Deployed%20on-GitHub%20Pages-222222?logo=github)](https://pages.github.com/)
 
-Noesis 是 Cavill 的公开学习知识库，使用 docmd 构建，并可从 Obsidian 同步笔记。
+Noesis 是 Cavill 的公开学习知识库，使用 docmd 构建。公开笔记直接维护在 [`content/`](content/) 中。
 
 网站地址：https://notes.cavill.site/
 
@@ -14,11 +14,20 @@ npm install
 npm run dev
 ```
 
-构建前可运行：
+提交前运行：
 
 ```bash
 npm run build
 npm run check
+```
+
+每篇公开笔记是一个 Markdown 文件，可用 frontmatter 控制发布状态：
+
+```yaml
+---
+publish: true
+draft: false
+---
 ```
 
 ## License
