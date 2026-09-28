@@ -10,7 +10,6 @@
   },
   "theme": {
     "name": "default",
-    "customCss": ["assets/css/noesis.css"],
     "copyWidgets": { "enabled": false }
   },
   "plugins": {
