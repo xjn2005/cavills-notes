@@ -1,14 +1,13 @@
 ---
-title: Noesis
-description: Cavill 的中文学习笔记，涵盖 C++、数据库系统与 Nano2Tetris。
+title: 欢迎！
+description: Cavill 的公开学习笔记，涵盖 C++、数据库系统与 Nano2Tetris。
 publish: true
 draft: false
 ---
 
-# Noesis
 
-Cavill 的公开学习笔记，记录课程、编程与系统知识。
+# 欢迎！
 
-::: callout tip "如何使用" icon:compass
-从课程入口开始阅读；侧栏用于切换课程，页面目录用于定位章节，搜索可查找术语和笔记。
-:::
+> 学习的价值，不只在于记住答案，更在于持续探索问题的兴趣。
+>
+> ——《费曼物理学讲义》
