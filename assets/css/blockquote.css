@@ -3,7 +3,6 @@
   padding: 0.875rem 1rem;
   border-left: 3px solid var(--link-color);
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-  background-color: color-mix(in srgb, var(--link-color) 8%, transparent);
   color: var(--text-muted);
 }
 
