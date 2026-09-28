@@ -182,8 +182,8 @@ HAVING AVG(s.gpa) > 3.9;   -- 注意标准写法要重复 AVG
 ![](https://cdn.jsdelivr.net/gh/xjn2005/my-blog-images/img/20260416162843807.png)
 # 5. String Operations
 **字符串基本规则**（SQL 标准）：
-• 区分大小写（case-sensitive）：'Alice' ≠ 'alice'。
-• 只能用单引号（single quotes）：'hello'（双引号在某些系统如 MySQL 可用于标识符或字符串，但标准只认单引号）。
+- 区分大小写（case-sensitive）：'Alice' ≠ 'alice'。
+- 只能用单引号（single quotes）：'hello'（双引号在某些系统如 MySQL 可用于标识符或字符串，但标准只认单引号）。
 **模式匹配**（LIKE）：
 - %：匹配任意长度子串（包括 0 长度）。
 - \_：匹配正好 1 个字符。  

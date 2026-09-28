@@ -15,8 +15,9 @@
   },
   "plugins": {
     "ai": false,
-    "git": false,
+    "git": {},
     "math": {},
+    "mermaid": {},
     "search": {},
     "seo": {},
     "sitemap": {},
