@@ -1,0 +1,15 @@
+{
+  "title": "Noesis",
+  "url": "https://notes.cavill.site",
+  "src": "content",
+  "out": "site",
+  "plugins": {
+    "ai": false,
+    "git": false,
+    "math": {},
+    "search": {},
+    "seo": {},
+    "sitemap": {},
+    "llms": {}
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "noesis",
+  "description": "Cavill 的公开学习笔记",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "docmd dev",
+    "build": "docmd build",
+    "check": "docmd validate",
+    "sync:obsidian": "node scripts/sync-obsidian-public.mjs",
+    "test": "node --test scripts/*.test.mjs"
+  },
+  "engines": {
+    "node": ">=22",
+    "npm": ">=10.9.2"
+  },
+  "dependencies": {
+    "yaml": "^2.8.2"
+  },
+  "devDependencies": {
+    "@docmd/core": "^0.9.7",
+    "@docmd/plugin-math": "^0.9.7"
+  }
+}

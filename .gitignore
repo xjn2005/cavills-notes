@@ -1,0 +1,8 @@
+.DS_Store
+node_modules
+site
+.obsidian
+private/
+content/private/
+content/drafts/
+LOCAL_MAINTENANCE.md
