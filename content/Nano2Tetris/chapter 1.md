@@ -31,7 +31,7 @@ tags:
 
 ![2-输入变量布尔函数真值表](https://cdn.jsdelivr.net/gh/xjn2005/my-blog-images/img/20260518211114325.png)
 
-::: callout info "NAND 与 NOR 的完备性"
+::: callout info "NAND 与 NOR 的完备性" icon:circle-info
 NAND 与 NOR 函数有一个非常重要的性质：仅使用 NAND（或仅使用 NOR），就可以构造出所有布尔函数。
 因此理论上来说，只要在物理世界实现了一种 NAND 门，就能够构建整个计算机。
 :::
@@ -57,7 +57,7 @@ NAND 与 NOR 函数有一个非常重要的性质：仅使用 NAND（或仅使�
 
 *Example*：我们可以用$Or(And(a,Not(b)),And(Not(a),b))$表示出$Xor(a,b)$
 这说明：复杂逻辑函数可以由多个基础逻辑门组合得到
-::: callout info "Note"
+::: callout info "Note" icon:circle-info
 门的接口是唯一的，而内部实现方式可以有很多种。
 :::
 
@@ -82,7 +82,7 @@ NAND 与 NOR 函数有一个非常重要的性质：仅使用 NAND（或仅使�
 ## 1.4 硬件描述语言（HDL）
 现代硬件设计已经无需物理制造，而是通过HDL（Hardware Description Language）编写芯片结构，配合硬件仿真器虚拟测试，验证正确后再流片生产。
 
-::: callout info "info"
+::: callout info "info" icon:circle-info
 在本课程中，我们提到的芯片和门的概念可以交换使用。
 :::
 

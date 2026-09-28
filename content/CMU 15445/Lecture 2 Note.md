@@ -7,7 +7,7 @@ tags:
 ---
 # 1. Relational Languages
 
-::: callout info "Info"
+::: callout info "Info" icon:circle-info
 :::
 
  Edgar Codd 在 1970 年代早期发表了关系模型的[经典论文](https://www.seas.upenn.edu/~zives/03f/cis550/codd.pdf)。 最初他只定义了数学上的表示方法，描述 DBMS 如何在关系模型上执行查询。 用户只需要用**声明式语言**（也就是 SQL）告诉系统「我想要什么结果」， 而由 DBMS 自己负责找出最高效的执行计划来产生答案。
@@ -101,11 +101,11 @@ SELECT COUNT(*) FROM student WHERE login LIKE '%@cs';
 SELECT COUNT(login) FROM student WHERE login LIKE '%@cs';
 SELECT COUNT(1) FROM student WHERE login LIKE '%@cs';
 ```
-::: callout info "Question"
+::: callout info "Question" icon:circle-help
 Why are they equivalent?
 :::
 
-::: callout info "Answer"
+::: callout info "Answer" icon:circle-check
 因为对于student，系统会先执行`FROM...WHERE...`，之后留下的行数就是在login列保留@cs的行，因此以下三者等价:
 1. count(*)：统计所有行数。
 2. count(login)：统计login列值非NULL的行数。
@@ -301,7 +301,7 @@ FROM enrolled
 ORDER BY cid;
 ```
 ![](https://cdn.jsdelivr.net/gh/xjn2005/my-blog-images/img/20260416163414518.png)
-::: callout warning "IMPORTANT difference"
+::: callout warning "IMPORTANT difference" icon:triangle-alert
 
 - ROW_NUMBER()：在排序**之前**分配序号（deterministic，即使内部排序变化也稳定）
 - RANK()：在窗口函数的 ORDER BY 排序**之后**计算排名（可能因并列而跳号）
@@ -357,7 +357,7 @@ WHERE sid IN (
 );
 
 ```
-::: callout info "Note"
+::: callout info "Note" icon:circle-info
 同一个列名（如 sid）在不同查询层中作用域（scope）不同。内层查询的 sid 和外层查询的 sid 可能指向不同表。
 :::
 

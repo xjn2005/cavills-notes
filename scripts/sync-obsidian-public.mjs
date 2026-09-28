@@ -16,8 +16,12 @@ function truthy(value) {
   return value === true || value === "true"
 }
 
+function withoutBom(markdown) {
+  return markdown.replace(/^\uFEFF/, "")
+}
+
 function frontmatter(markdown) {
-  const match = markdown.match(/^---\r?\n([\s\S]*?)\r?\n---/)
+  const match = withoutBom(markdown).match(/^---\r?\n([\s\S]*?)\r?\n---/)
   return match ? (YAML.parse(match[1]) ?? {}) : {}
 }
 
@@ -36,8 +40,18 @@ function generatedMetadata(data, relParts, file) {
 }
 
 function withGeneratedMetadata(markdown, metadata) {
-  const match = markdown.match(/^---\r?\n([\s\S]*?)\r?\n---/)
-  return match ? `---\n${YAML.stringify(metadata)}---${markdown.slice(match[0].length)}` : markdown
+  const normalized = withoutBom(markdown)
+  const match = normalized.match(/^---\r?\n([\s\S]*?)\r?\n---/)
+  return match ? `---\n${YAML.stringify(metadata)}---${normalized.slice(match[0].length)}` : normalized
+}
+
+function slugifySegment(name) {
+  return name
+    .replace(/\s+/g, "-")
+    .replace(/[^a-zA-Z0-9\-_.~]/g, "-")
+    .replace(/-{2,}/g, "-")
+    .replace(/^-+|-+$/g, "")
+    || name
 }
 
 function relativePath(base, target) {
@@ -177,9 +191,12 @@ for (const file of await walk(source)) {
 
 for (const { parts, title, notes } of indexes.values()) {
   const directory = path.join(dest, ...parts)
+  notes.sort((a, b) => a.localeCompare(b, "zh-CN", { numeric: true }))
   const links = notes
-    .sort((a, b) => a.localeCompare(b, "zh-CN", { numeric: true }))
-    .map((note) => `- [${note}](./${note}.md)`)
+    .map((note, index) => `- [${note}][note-${index + 1}]`)
+    .join("\n")
+  const references = notes
+    .map((note, index) => `[note-${index + 1}]: ./${slugifySegment(note)}/`)
     .join("\n")
 
   await fs.mkdir(directory, { recursive: true })
@@ -191,7 +208,7 @@ ${YAML.stringify({ title, publish: true, draft: false, cssclasses: ["hide-folder
 
 # 目录
 
-${links}${links ? "\n" : ""}`,
+${links}${links ? `\n\n${references}\n` : ""}`,
   )
   managedPaths.add(relativePath(dest, target))
 }

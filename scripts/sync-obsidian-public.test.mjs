@@ -8,6 +8,15 @@ const script = new URL("./sync-obsidian-public.mjs", import.meta.url)
 const published = "---\npublish: true\ndraft: false\n---\n"
 
 function index(title, notes) {
+  const slug = (note) => note
+    .replace(/\s+/g, "-")
+    .replace(/[^a-zA-Z0-9\-_.~]/g, "-")
+    .replace(/-{2,}/g, "-")
+    .replace(/^-+|-+$/g, "")
+    || note
+  const links = notes.map((note, index) => `- [${note}][note-${index + 1}]`).join("\n")
+  const references = notes.map((note, index) => `[note-${index + 1}]: ./${slug(note)}/`).join("\n")
+
   return `---
 title: ${title}
 publish: true
@@ -18,7 +27,9 @@ cssclasses:
 
 # 目录
 
-${notes.map((note) => `- [${note}](./${note}.md)`).join("\n")}
+${links}
+
+${references}
 `
 }
 
@@ -122,6 +133,28 @@ test("sync removes stale output and adds only missing metadata", async () => {
     const handwritten = await fs.readFile(path.join(dest, "Notes", "02-kept.md"), "utf8")
     assert.match(handwritten, /description: Handwritten/)
     assert.match(handwritten, /- keep/)
+  } finally {
+    process.argv = argv
+    await fs.rm(root, { recursive: true, force: true })
+  }
+})
+
+test("sync accepts published notes with a UTF-8 BOM", async () => {
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), "quartz-sync-bom-"))
+  const source = path.join(root, "public")
+  const dest = path.join(root, "content")
+  const argv = process.argv
+
+  try {
+    await fs.mkdir(source, { recursive: true })
+    await fs.mkdir(dest)
+    await fs.writeFile(path.join(dest, "index.md"), "HOME\n")
+    await fs.writeFile(path.join(source, "bom.md"), `\uFEFF${published}# BOM\n`)
+
+    process.argv = ["node", script.pathname, "--source", source, "--dest", dest]
+    await import(`${script.href}?bom=${Date.now()}`)
+
+    assert.match(await fs.readFile(path.join(dest, "bom.md"), "utf8"), /^---\n/)
   } finally {
     process.argv = argv
     await fs.rm(root, { recursive: true, force: true })

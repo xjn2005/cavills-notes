@@ -48,7 +48,7 @@ counter.fetch_add(1, std::memory_order_relaxed);
 
 `memory_order_relaxed` 仍然保证计数操作本身是原子的，但不会同步其他普通变量。Count-Min Sketch 等并发计数场景通常只关心计数不会丢失，因此可以使用这种内存序。
 
-::: callout warning
+::: callout warning "注意" icon:triangle-alert
 `std::atomic` 只保证单次操作的原子性。下面的 `load()` 和 `store()` 分别是原子的，但组合起来并不是一次原子递增：
 
 ```C++

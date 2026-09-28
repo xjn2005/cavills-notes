@@ -7,7 +7,7 @@ tags:
 ---
 # 1.Storage
 在这门课中，我们关注的是一种「面向磁盘」的 DBMS 架构，假设数据库的主要存储位置在非易失性磁盘（non-volatile disk）上。
-::: callout info "info"
+::: callout info "info" icon:circle-info
 
 - **CPU**：执行计算与指令的核心部件，速度极快但几乎不用于存储数据。
 - **Memory（内存）**：CPU直接访问的工作区，支持快速随机访问但断电会丢失数据。
@@ -52,7 +52,7 @@ DBMS 的设计目标之一是支持**超过内存容量的数据（data > memory
 一种实现方式是使用 **mmap（memory mapping）**：
 - 将文件映射到进程地址空间
 - 由 OS 负责 page 在 disk 与 memory 之间的移动
-::: callout info "问题："
+::: callout info "问题：" icon:circle-help
 当发生 **page fault** 时，进程会被阻塞（blocked）
 :::
 

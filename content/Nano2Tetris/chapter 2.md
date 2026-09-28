@@ -74,7 +74,7 @@ $$\bar{x} = \begin{cases} 2^n - x & \text{if } x \neq 0 \\ 0 & \text{otherwise} 
 | 输入  | a，b                                         |
 | 输出  | sum，carry                                   |
 | 功能  | sum = LSB of a + b <br>carry = MSB of a + b |
-::: callout info "NOTE"
+::: callout info "NOTE" icon:circle-info
 sum用于保留低位，carry用于保留进位。在这里可以认为需要进位时carry为1，不需要进位时sum为1。
 :::
 
@@ -92,7 +92,7 @@ Hack（我们目标打造的计算机） 的 ALU计算一组固定的函数out =
 - f是位于一个函数表中的函数,该函数表由 18 个固定函数组成。
 
 我们通过设置六个称为控制位(controlbits)的输入位来告诉ALU用哪一个函数来进行何种函数计算。
-::: callout info "NOTE"
+::: callout info "NOTE" icon:circle-info
 这6个控制位的每一位都会指示 ALU 来执行某个基本操作。这些操作的各种组合可以让 ALU 计算出 $2^6=64$个不同的函数进行操作。
 :::
 

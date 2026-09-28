@@ -3,6 +3,16 @@
   "url": "https://notes.cavill.site",
   "src": "content",
   "out": "site",
+  "i18n": {
+    "default": "zh",
+    "stringMode": true,
+    "locales": [{ "id": "zh", "label": "中文" }]
+  },
+  "theme": {
+    "name": "default",
+    "customCss": ["assets/css/noesis.css"],
+    "copyWidgets": { "enabled": false }
+  },
   "plugins": {
     "ai": false,
     "git": false,

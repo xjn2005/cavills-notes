@@ -8,6 +8,10 @@ cssclasses:
 
 # 目录
 
-- [Lecture 1 Note](./Lecture 1 Note.md)
-- [Lecture 2 Note](./Lecture 2 Note.md)
-- [Lecture 3 Note](./Lecture 3 Note.md)
+- [Lecture 1 Note][lecture-1]
+- [Lecture 2 Note][lecture-2]
+- [Lecture 3 Note][lecture-3]
+
+[lecture-1]: ./Lecture-1-Note/
+[lecture-2]: ./Lecture-2-Note/
+[lecture-3]: ./Lecture-3-Note/

@@ -1,11 +1,25 @@
-﻿# Noesis
+# Noesis
 
-[![Built with Quartz](https://img.shields.io/badge/Built%20with-Quartz-8A63D2)](https://quartz.jzhao.xyz/)
+[![Built with docmd](https://img.shields.io/badge/Built%20with-docmd-0ea5e9)](https://docmd.io/)
 [![GitHub Pages](https://img.shields.io/badge/Deployed%20on-GitHub%20Pages-222222?logo=github)](https://pages.github.com/)
 
-Noesis 是我的公开知识库，使用 Quartz 构建，并从 Obsidian 同步内容。
+Noesis 是 Cavill 的公开学习知识库，使用 docmd 构建，并可从 Obsidian 同步笔记。
 
-网站地址：https://xjn2005.github.io/noesis/
+网站地址：https://notes.cavill.site/
+
+## 本地开发
+
+```bash
+npm install
+npm run dev
+```
+
+构建前可运行：
+
+```bash
+npm run build
+npm run check
+```
 
 ## License
 

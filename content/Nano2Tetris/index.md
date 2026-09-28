@@ -8,5 +8,8 @@ cssclasses:
 
 # 目录
 
-- [chapter 1](./chapter 1.md)
-- [chapter 2](./chapter 2.md)
+- [chapter 1][chapter-1]
+- [chapter 2][chapter-2]
+
+[chapter-1]: ./chapter-1/
+[chapter-2]: ./chapter-2/

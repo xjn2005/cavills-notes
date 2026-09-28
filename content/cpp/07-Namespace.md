@@ -46,7 +46,7 @@ std::cout << Alice::value << std::endl;
 std::cout << Bob::value << std::endl;
 ```
 
-::: callout warning "谨慎使用 using namespace"
+::: callout warning "谨慎使用 using namespace" icon:triangle-alert
 在头文件中，不要使用`using namespace std;`
 因为头文件会被多个源文件包含，这会把整个 std 命名空间引入所有包含它的文件，增加命名冲突的风险。
 :::
