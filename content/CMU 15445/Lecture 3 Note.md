@@ -1,4 +1,5 @@
 ---
+title: Lecture 3 Note
 publish: true
 draft: false
 description: CMU 15445 学习笔记：Lecture 3 Note。

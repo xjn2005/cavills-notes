@@ -7,33 +7,7 @@ import test from "node:test"
 const script = new URL("./sync-obsidian-public.mjs", import.meta.url)
 const published = "---\npublish: true\ndraft: false\n---\n"
 
-function index(title, notes) {
-  const slug = (note) => note
-    .replace(/\s+/g, "-")
-    .replace(/[^a-zA-Z0-9\-_.~]/g, "-")
-    .replace(/-{2,}/g, "-")
-    .replace(/^-+|-+$/g, "")
-    || note
-  const links = notes.map((note, index) => `- [${note}][note-${index + 1}]`).join("\n")
-  const references = notes.map((note, index) => `[note-${index + 1}]: ./${slug(note)}/`).join("\n")
-
-  return `---
-title: ${title}
-publish: true
-draft: false
-cssclasses:
-  - hide-folder-list
----
-
-# 目录
-
-${links}
-
-${references}
-`
-}
-
-test("sync generates indexes for synchronized subfolders", async () => {
+test("sync preserves subfolders without generated index pages", async () => {
   const root = await fs.mkdtemp(path.join(os.tmpdir(), "quartz-sync-"))
   const source = path.join(root, "public")
   const dest = path.join(root, "content")
@@ -54,24 +28,14 @@ test("sync generates indexes for synchronized subfolders", async () => {
     )
     await fs.writeFile(path.join(source, "Notes #1", "01-intro.md"), published)
     await fs.writeFile(path.join(source, "Notes #1", "Week 1", "01-detail.md"), published)
-    await fs.writeFile(path.join(source, "Notes #1", "Week 1", "index.md"), published)
 
     process.argv = ["node", script.pathname, "--source", source, "--dest", dest]
     await import(`${script.href}?test=${Date.now()}`)
 
     assert.equal(await fs.readFile(path.join(dest, "index.md"), "utf8"), "HOME\n")
-    assert.equal(
-      await fs.readFile(path.join(dest, "cpp", "index.md"), "utf8"),
-      index("C++", ["02-auto", "04 spaced note", "10-atomic"]),
-    )
-    assert.equal(
-      await fs.readFile(path.join(dest, "Notes #1", "index.md"), "utf8"),
-      index('"Notes #1"', ["01-intro"]),
-    )
-    assert.equal(
-      await fs.readFile(path.join(dest, "Notes #1", "Week 1", "index.md"), "utf8"),
-      index("Week 1", ["01-detail"]),
-    )
+    await assert.rejects(fs.access(path.join(dest, "cpp", "index.md")))
+    await assert.rejects(fs.access(path.join(dest, "Notes #1", "index.md")))
+    await assert.rejects(fs.access(path.join(dest, "Notes #1", "Week 1", "index.md")))
     await assert.rejects(fs.access(path.join(dest, "cpp", "03-draft.md")))
   } finally {
     process.argv = argv
@@ -79,7 +43,7 @@ test("sync generates indexes for synchronized subfolders", async () => {
   }
 })
 
-test("lowercase cpp folder keeps the C++ index title", async () => {
+test("lowercase cpp folder does not receive a generated index page", async () => {
   const root = await fs.mkdtemp(path.join(os.tmpdir(), "quartz-sync-cpp-"))
   const source = path.join(root, "public")
   const dest = path.join(root, "content")
@@ -92,10 +56,7 @@ test("lowercase cpp folder keeps the C++ index title", async () => {
     process.argv = ["node", script.pathname, "--source", source, "--dest", dest]
     await import(`${script.href}?lowercase-cpp=${Date.now()}`)
 
-    assert.equal(
-      await fs.readFile(path.join(dest, "cpp", "index.md"), "utf8"),
-      index("C++", ["01-OOP"]),
-    )
+    await assert.rejects(fs.access(path.join(dest, "cpp", "index.md")))
   } finally {
     process.argv = argv
     await fs.rm(root, { recursive: true, force: true })
@@ -127,6 +88,7 @@ test("sync removes stale output and adds only missing metadata", async () => {
     assert.equal(await fs.readFile(path.join(dest, "index.md"), "utf8"), "HOME\n")
     assert.equal(await fs.readFile(path.join(dest, ".gitkeep"), "utf8"), "")
     await assert.rejects(fs.access(path.join(dest, "cpp", "stale.md")))
+    await assert.rejects(fs.access(path.join(dest, "cpp", "index.md")))
     const generated = await fs.readFile(path.join(dest, "cpp", "01-note.md"), "utf8")
     assert.match(generated, /description: C\+\+ 学习笔记：01-note。/)
     assert.match(generated, /tags:\n  - C\+\+/)

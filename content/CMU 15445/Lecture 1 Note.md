@@ -1,4 +1,5 @@
 ---
+title: Lecture 1 Note
 publish: true
 draft: false
 description: CMU 15445 学习笔记：Lecture 1 Note。

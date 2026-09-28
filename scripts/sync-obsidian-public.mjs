@@ -45,15 +45,6 @@ function withGeneratedMetadata(markdown, metadata) {
   return match ? `---\n${YAML.stringify(metadata)}---${normalized.slice(match[0].length)}` : normalized
 }
 
-function slugifySegment(name) {
-  return name
-    .replace(/\s+/g, "-")
-    .replace(/[^a-zA-Z0-9\-_.~]/g, "-")
-    .replace(/-{2,}/g, "-")
-    .replace(/^-+|-+$/g, "")
-    || name
-}
-
 function relativePath(base, target) {
   return path.relative(base, target).split(path.sep).join("/")
 }
@@ -133,7 +124,6 @@ await fs.mkdir(dest, { recursive: true })
 
 let copied = 0
 let skipped = 0
-const indexes = new Map()
 const managedPaths = new Set()
 
 for (const file of await walk(source)) {
@@ -168,49 +158,6 @@ for (const file of await walk(source)) {
     copied++
   }
 
-  const dirParts = relParts.slice(0, -1)
-  for (let depth = 1; depth <= dirParts.length; depth++) {
-    const parts = dirParts.slice(0, depth)
-    const key = parts.join(path.sep)
-    if (!indexes.has(key)) {
-      const title = depth === 1 && parts[0] === "cpp" ? "C++" : sourceRelParts[depth - 1]
-      indexes.set(key, { parts, title, notes: [] })
-    }
-  }
-
-  if (
-    dirParts.length > 0 &&
-    path.extname(file).toLowerCase() === ".md" &&
-    relParts.at(-1).toLowerCase() !== "index.md"
-  ) {
-    indexes
-      .get(dirParts.join(path.sep))
-      .notes.push(path.basename(relParts.at(-1), path.extname(relParts.at(-1))))
-  }
-}
-
-for (const { parts, title, notes } of indexes.values()) {
-  const directory = path.join(dest, ...parts)
-  notes.sort((a, b) => a.localeCompare(b, "zh-CN", { numeric: true }))
-  const links = notes
-    .map((note, index) => `- [${note}][note-${index + 1}]`)
-    .join("\n")
-  const references = notes
-    .map((note, index) => `[note-${index + 1}]: ./${slugifySegment(note)}/`)
-    .join("\n")
-
-  await fs.mkdir(directory, { recursive: true })
-  const target = path.join(directory, "index.md")
-  await fs.writeFile(
-    target,
-    `---
-${YAML.stringify({ title, publish: true, draft: false, cssclasses: ["hide-folder-list"] })}---
-
-# 目录
-
-${links}${links ? `\n\n${references}\n` : ""}`,
-  )
-  managedPaths.add(relativePath(dest, target))
 }
 
 await removeStaleGeneratedContent(dest, managedPaths)

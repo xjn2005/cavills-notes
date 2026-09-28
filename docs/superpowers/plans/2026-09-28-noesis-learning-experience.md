@@ -45,7 +45,7 @@ Run: `npm run build`
 
 Expected: 产物包含中文系统标签、导航 SVG，且不包含 `Copy Context`。
 
-### Task 2: 把首页变成学习入口
+### Task 2: 简化首页
 
 **Files:**
 - Modify: `content/index.md`
