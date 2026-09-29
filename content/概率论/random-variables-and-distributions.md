@@ -40,7 +40,7 @@ tags:
 		\forall x_1<x_2, F(x_1)\le F(x_2)
 		$$
 
-	- $0\le F(x) \le 1$，且 
+	- $0\le F(x) \le 1$，且
 
 		$$
 		\lim_{x\to+\infty}F(x) = 1,\lim_{x\to-\infty}F(x) = 0
@@ -263,7 +263,7 @@ $$
 
 	1. 直线关于 $x=\mu$ 对称：$f(\mu + x) = f(\mu - x)$
 
-	2. 最大值 $f(\mu) = \dfrac{1}{\sqrt{2\pi} \sigma}$ 
+	2. 最大值 $f(\mu) = \dfrac{1}{\sqrt{2\pi} \sigma}$
 
 	3. 渐近线 $x$ 轴
 
