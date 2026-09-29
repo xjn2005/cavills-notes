@@ -35,7 +35,12 @@
   --scrollbar-thumb-hover: #5a5a5a;
 }
 
+:root[data-theme="dark"] .content-area::before {
+  background: none;
+}
+
 .main-content a:any-link {
   text-decoration: underline;
   text-decoration-color: color-mix(in srgb, currentColor 46%, transparent);
   text-underline-offset: 0.14em;
+}
