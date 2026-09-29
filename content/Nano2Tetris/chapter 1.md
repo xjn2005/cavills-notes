@@ -11,7 +11,7 @@ tags:
 
  ![布尔函数真值表表示](https://cdn.jsdelivr.net/gh/xjn2005/my-blog-images/img/20260518201817040.png)
 - 布尔表达式（Boolean Expressions）：使用布尔算子（e.g. And、Or、Not）描述。为了方便表示，我们规定：
-	- $x \cdot y(或者 \ xy) \coloneqq x \ And \ y$
+	- $x \cdot y(\text{或者} \ xy) \coloneqq x \ And \ y$
 	-  $x + y \coloneqq x \ Or \ y$
 	-  $\bar{x} \coloneqq Not \ x$
 从而我们认为真值表中的$f(x,y,z)$ 可以被表示为 $(x+y)\cdot \bar{z}$。
@@ -27,7 +27,7 @@ tags:
 - $xy\bar{z}$ （对应 `(1,1,0)`
 
 2-输入变量的布尔函数（Two-Input Boolean Functions）：对于 $n$ 个二进制变量能够构成的布尔函数的数量为$2^{2^n}$。
-*Example*：$x,y$只能取值为$0,1$。那么组合结果有$2^2=4$种。我们对于${x,y}$定义一种运算，则有$f(x,y)$。那么根据这个运算，我们对于$x,y$值的每种组合结果都产生两个输出$0或者1$。详情如图所示：
+*Example*：$x,y$只能取值为$0,1$。那么组合结果有$2^2=4$种。我们对于${x,y}$定义一种运算，则有$f(x,y)$。那么根据这个运算，我们对于$x,y$值的每种组合结果都产生两个输出$0\text{ 或者 }1$。详情如图所示：
 
 ![2-输入变量布尔函数真值表](https://cdn.jsdelivr.net/gh/xjn2005/my-blog-images/img/20260518211114325.png)
 
