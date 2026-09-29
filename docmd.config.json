@@ -3,6 +3,8 @@
   "url": "https://notes.cavill.site",
   "src": "content",
   "out": "site",
+  "favicon": "assets/favicon.png",
+  "customJs": ["assets/js/github-link.js"],
   "i18n": {
     "default": "zh",
     "stringMode": true,

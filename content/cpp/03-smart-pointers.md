@@ -6,7 +6,7 @@ description: C++ 学习笔记：03-智能指针。
 tags:
   - C++
 ---
-::: callout info "说明" icon:circle-info
+::: callout info "说明" icon:info
 在学 C 语言的过程中，我们知道普通指针管理内存容易造成内存泄漏：
 
 ```cpp
@@ -26,7 +26,7 @@ delete[] p;
 ## unique_ptr
 `std::unique_ptr` 只允许这个指针来管理对应的资源， **不允许进行指针的赋值和拷贝** ，但是可以用 **`move` 方法来移动指针的所有权** ，比如 `unique_ptr<int> p2 = move(p1);`
 
-::: callout info "所有权" icon:circle-info
+::: callout info "所有权" icon:info
 若某个对象A拥有另一个对象B的所有权，那么A就负责B的生命周期管理，即B的创建、使用和销毁。换句话说，A有权决定B什么时候被创建，什么时候被销毁。
 :::
 
@@ -44,7 +44,7 @@ auto p2 = std::move(p1);
 此时对象的所有权从 `p1` 转移给 `p2`，而 `p1` 会变为空指针（`nullptr`）。
 ## shared_ptr
  `std::shared_ptr` 是非独占的指针，可以多个指针管理一个对象。内部使用 **引用计数**。`shared_ptr`内部的引用计数是 **线程安全** 的，但是对象的读取需要 **加锁**。
-::: callout info "引用计数" icon:circle-info
+::: callout info "引用计数" icon:info
 引用计数记录当前有多少个 `shared_ptr` 正在管理同一个对象。
 
 - 创建第一个 `shared_ptr` 时，引用计数为 **1**。
@@ -112,7 +112,7 @@ std::weak_ptr<int> observer = ptr;
 ```
 
 `weak_ptr`不能直接使用 `*` 或 `->`。而且必须调用 `lock()` 获得一个 `shared_ptr` 后才能访问对象。
-::: callout info "Example" icon:circle-info
+::: callout info "Example" icon:list
 
 ```cpp
 auto ptr = std::make_shared<int>(42);

@@ -1,0 +1,69 @@
+- generic [active] [ref=e1]:
+  - link "跳到主要内容" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - complementary [ref=e3]:
+    - heading [level=1] [ref=e5]:
+      - link "Noesis" [ref=e6] [cursor=pointer]:
+        - /url: ./
+    - navigation "主导航" [ref=e8]:
+      - list [ref=e9]:
+        - listitem [ref=e10]:
+          - link "欢迎！" [ref=e11] [cursor=pointer]:
+            - /url: ./
+        - listitem [ref=e13] [cursor=pointer]:
+          - generic [ref=e14]: 概率论
+        - listitem [ref=e19] [cursor=pointer]:
+          - generic [ref=e20]: CMU 15445
+        - listitem [ref=e25] [cursor=pointer]:
+          - generic [ref=e26]: Cpp
+        - listitem [ref=e31] [cursor=pointer]:
+          - generic [ref=e32]: Nano2Tetris
+  - generic [ref=e38]:
+    - banner [ref=e39]:
+      - generic [ref=e40]:
+        - button "切换侧边栏" [ref=e41] [cursor=pointer]
+        - generic [ref=e44]: 欢迎！
+      - generic [ref=e46]:
+        - link "在 GitHub 上查看项目" [ref=e47] [cursor=pointer]:
+          - /url: https://github.com/xjn2005/noesis
+        - generic [ref=e50]:
+          - button "搜索" [ref=e51] [cursor=pointer]:
+            - generic [ref=e56]:
+              - generic [ref=e57]: ⌘
+              - generic [ref=e58]: K
+          - button "切换主题" [ref=e59] [cursor=pointer]
+    - generic [ref=e66]:
+      - main [ref=e67]:
+        - generic [ref=e69]:
+          - navigation "面包屑导航" [ref=e71]:
+            - list [ref=e72]:
+              - listitem [ref=e73]:
+                - generic [ref=e74]: 欢迎！
+          - heading [level=1] [ref=e75]:
+            - link "此章节的永久链接" [ref=e76] [cursor=pointer]:
+              - /url: "#欢迎"
+            - text: 欢迎！
+          - blockquote [ref=e79]:
+            - paragraph [ref=e80]: 学习的价值，不只在于记住答案，更在于持续探索问题的兴趣。
+            - paragraph [ref=e81]: ——《费曼物理学讲义》
+          - paragraph [ref=e82]: 建立这个笔记站点的初衷有两点。一方面是希望自己的笔记能够帮助后学者，另一方面也是希望在自己遗忘时能够温习。
+          - figure "我最喜欢的电影《死亡诗社》" [ref=e83]:
+            - img "电影《死亡诗社》剧照" [ref=e84]
+          - link "下一页 样本空间、事件和概率" [ref=e88] [cursor=pointer]:
+            - /url: ./概率论/sample-space-events-and-probability/
+            - generic [ref=e89]:
+              - generic [ref=e90]: 下一页
+              - strong [ref=e91]: 样本空间、事件和概率
+        - button "View commit history" [ref=e95]:
+          - generic: "最后更新:"
+          - generic: 21h ago
+      - contentinfo [ref=e97]:
+        - generic [ref=e98]:
+          - generic [ref=e99]:
+            - text: © 2026
+            - link "Cavill" [ref=e100] [cursor=pointer]:
+              - /url: https://cavill.site
+          - generic [ref=e101]:
+            - text: 使用构建
+            - link "docmd." [ref=e107] [cursor=pointer]:
+              - /url: https://docmd.io

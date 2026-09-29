@@ -8,7 +8,7 @@ tags:
 ---
 # 1.Storage
 在这门课中，我们关注的是一种「面向磁盘」的 DBMS 架构，假设数据库的主要存储位置在非易失性磁盘（non-volatile disk）上。
-::: callout info "info" icon:circle-info
+::: callout info "info" icon:info
 
 - **CPU**：执行计算与指令的核心部件，速度极快但几乎不用于存储数据。
 - **Memory（内存）**：CPU直接访问的工作区，支持快速随机访问但断电会丢失数据。

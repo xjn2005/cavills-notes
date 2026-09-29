@@ -8,10 +8,11 @@ tags:
 ---
 # 1. Relational Languages
 
-::: callout info "Info" icon:circle-info
+::: callout info "Info" icon:info
+ Edgar Codd 在 1970 年代早期发表了关系模型的[经典论文](https://www.seas.upenn.edu/~zives/03f/cis550/codd.pdf)。 最初他只定义了数学上的表示方法，描述 DBMS 如何在关系模型上执行查询。 用户只需要用**声明式语言**（也就是 SQL）告诉系统「我想要什么结果」， 而由 DBMS 自己负责找出最高效的执行计划来产生答案。
 :::
 
- Edgar Codd 在 1970 年代早期发表了关系模型的[经典论文](https://www.seas.upenn.edu/~zives/03f/cis550/codd.pdf)。 最初他只定义了数学上的表示方法，描述 DBMS 如何在关系模型上执行查询。 用户只需要用**声明式语言**（也就是 SQL）告诉系统「我想要什么结果」， 而由 DBMS 自己负责找出最高效的执行计划来产生答案。
+
 
 **关系代数**基于**集合**（set）：无序、不允许重复元素。
 **SQL**基于**包/多重集**（bag）：无序、允许重复行。
@@ -358,7 +359,7 @@ WHERE sid IN (
 );
 
 ```
-::: callout info "Note" icon:circle-info
+::: callout info "Note" icon:info
 同一个列名（如 sid）在不同查询层中作用域（scope）不同。内层查询的 sid 和外层查询的 sid 可能指向不同表。
 :::
 
