@@ -13,3 +13,29 @@
 .main-content blockquote > :last-child {
   margin-bottom: 0;
 }
+
+:root[data-theme="dark"] {
+  --bg-color: #191919;
+  --text-color: #e6e6e6;
+  --text-muted: #a6a6a6;
+  --text-heading: #f0f0f0;
+  --link-color: #d4d4d4;
+  --link-color-hover: #ffffff;
+  --border-color: #373737;
+  --border-color-codeblock: #373737;
+  --header-bg: rgb(25 25 25 / 80%);
+  --header-border: #373737;
+  --sidebar-bg: #191919;
+  --sidebar-text: #d4d4d4;
+  --sidebar-link-active-bg: #252525;
+  --sidebar-link-active-text: #ffffff;
+  --code-bg: #252525;
+  --code-text: #e6e6e6;
+  --scrollbar-thumb: #373737;
+  --scrollbar-thumb-hover: #5a5a5a;
+}
+
+.main-content a:any-link {
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, currentColor 46%, transparent);
+  text-underline-offset: 0.14em;
