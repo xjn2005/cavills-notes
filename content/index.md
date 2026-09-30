@@ -14,6 +14,8 @@ draft: false
 
 建立这个笔记站点的初衷有两点。一方面是希望自己的笔记能够帮助后学者，另一方面也是希望在自己遗忘时能够温习。
 
+如有谬误，烦请在 issue 中**直接**指出。
+
 <figure style="margin: 0; text-align: center;">
   <img
     src="https://cdn.jsdelivr.net/gh/xjn2005/my-blog-images/img/20260421191639158.jpg"
