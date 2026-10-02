@@ -1,9 +1,9 @@
-# Noesis
+# Cavill's Notes
 
 [![Built with docmd](https://img.shields.io/badge/Built%20with-docmd-0ea5e9)](https://docmd.io/)
 [![GitHub Pages](https://img.shields.io/badge/Deployed%20on-GitHub%20Pages-222222?logo=github)](https://pages.github.com/)
 
-Noesis 是 Cavill 的公开学习知识库，使用 docmd 构建。公开笔记直接维护在 [`content/`](content/) 中。
+Cavill's Notes 是 Cavill 的公开学习知识库，使用 docmd 构建。公开笔记直接维护在 [`content/`](content/) 中。
 
 网站地址：https://notes.cavill.site/
 

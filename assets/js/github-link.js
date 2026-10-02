@@ -5,7 +5,7 @@
 
   const link = document.createElement('a');
   link.className = 'github-project-link';
-  link.href = 'https://github.com/xjn2005/noesis';
+  link.href = 'https://github.com/xjn2005/cavills-notes';
   link.target = '_blank';
   link.rel = 'noopener noreferrer';
   link.ariaLabel = '在 GitHub 上查看项目';
