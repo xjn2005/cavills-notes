@@ -39,7 +39,8 @@
     "children": [
       { "title": "样本空间、事件和概率", "path": "/概率论/sample-space-events-and-probability/" },
       { "title": "随机变量及其分布", "path": "/概率论/random-variables-and-distributions/" },
-      { "title": "多维随机变量及其分布", "path": "/概率论/multivariate-random-variables-and-distributions/" }
+      { "title": "多维随机变量及其分布", "path": "/概率论/multivariate-random-variables-and-distributions/" },
+      { "title": "随机变量的数字特征", "path": "/概率论/numerical-characteristics-of-random-variables/" }
     ]
   }
 ]

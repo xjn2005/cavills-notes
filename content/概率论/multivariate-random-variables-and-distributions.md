@@ -384,7 +384,7 @@ $$
 
 **性质**：
 
-1. **Poisson 分布的可加性**：若随机变量 $X,Y$ **相互独立**，且都服从 Poisson 分布，即 $X\sim P(\lambda_1),Y\sim P(\lambda_2)$，则 **其和也服从 Poisson 分布**，即
+1. **泊松分布的可加性**：若随机变量 $X,Y$ **相互独立**，且都服从 泊松分布，即 $X\sim P(\lambda_1),Y\sim P(\lambda_2)$，则 **其和也服从 泊松分布**，即
 
    $$
    X+Y\sim P(\lambda_1+\lambda_2)
