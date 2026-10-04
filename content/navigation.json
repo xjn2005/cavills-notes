@@ -44,5 +44,19 @@
       { "title": "随机变量的数字特征", "path": "/概率论/numerical-characteristics-of-random-variables/" },
       { "title": "大数定律和中心极限定理", "path": "/概率论/law-of-large-numbers-and-central-limit-theorem/" }
     ]
+  },
+  {
+    "title": "数理统计",
+    "collapsible": true,
+    "children": [
+      { "title": "统计量与分布", "path": "/数理统计/statistics-and-distributions/" }
+    ]
+  },
+  {
+    "title": "实变函数",
+    "collapsible": true,
+    "children": [
+      { "title": "前置知识", "path": "/实变函数/前置知识/" }
+    ]
   }
 ]
