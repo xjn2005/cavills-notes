@@ -30,7 +30,8 @@
     "collapsible": true,
     "children": [
       { "title": "Chapter 1", "path": "/Nano2Tetris/chapter-1/" },
-      { "title": "Chapter 2", "path": "/Nano2Tetris/chapter-2/" }
+      { "title": "Chapter 2", "path": "/Nano2Tetris/chapter-2/" },
+      { "title": "Chapter 3", "path": "/Nano2Tetris/chapter-3/" }
     ]
   },
   {

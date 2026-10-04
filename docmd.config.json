@@ -4,7 +4,7 @@
   "src": "content",
   "out": "site",
   "favicon": "assets/favicon.png",
-  "customJs": ["assets/js/github-link.js"],
+  "customJs": ["assets/js/github-link.js", "assets/js/image-protection.js"],
   "i18n": {
     "default": "zh",
     "stringMode": true,

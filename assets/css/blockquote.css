@@ -68,3 +68,9 @@
   text-decoration-color: color-mix(in srgb, currentColor 46%, transparent);
   text-underline-offset: 0.14em;
 }
+
+.main-content img {
+  -webkit-touch-callout: none;
+  -webkit-user-drag: none;
+  user-select: none;
+}
