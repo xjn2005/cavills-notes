@@ -148,6 +148,6 @@ A tuple 本质上是一个字节序列（这些字节不一定是 contiguous 的
 - 最常见的形式：`page id + (offset or slot)`。
 - Application 不应该依赖这些 ids。
 ## 8.4 Denormalized Tuple Data
-如果两个 tables 之间存在关联，DBMS 可以提前将它们 “pre-join”，使它们最终位于同一个 page 上。这样读取会更快，因为 DBMS 只需要加载一个 page，而不是两个 separate pages。
+如果两个 tables 之间存在关联，DBMS 可以提前将它们「pre-join」，使它们最终位于同一个 page 上。这样读取会更快，因为 DBMS 只需要加载一个 page，而不是两个 separate pages。
 不过，这也会让 updates 更昂贵，因为 DBMS 需要为每个 tuple 分配更多空间。
 ![](https://cdn.jsdelivr.net/gh/xjn2005/my-blog-images/img/20260713163851757.png)

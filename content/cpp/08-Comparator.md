@@ -12,8 +12,8 @@ tags:
 template <typename T, typename Compare = std::less<T>>
 ```
 其中
-- `T` 表示元素类型；
-- `Compare` 表示比较器（Comparator）类型；
+- `T` 表示元素类型，
+- `Compare` 表示比较器（Comparator）类型，
 - `std::less<T>` 为默认比较器，表示使用 `<` 进行比较。
 
 主要关注`typename Compare = std::less<T>` 。表示规则为升序排序。如果希望降序排序，则改为`typename Compare = std::greater<T>`。

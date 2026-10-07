@@ -12,7 +12,7 @@ tags:
 
 一般地，所研究对象的某个或某些数量指标的全体称为**总体**。如果所研究的问题只有一个数量指标，就是一个**随机变量**。如果有多个数量指标，就是**多维随机变量**。总体的每个数量指标称为**个体**。
 
-关于随机变量、分布函数与多维随机变量的基础定义，可分别参阅 [随机变量及其分布函数](/概率论/random-variables-and-distributions/#随机变量) 和 [二维随机变量及其联合分布函数](/概率论/multivariate-random-variables-and-distributions/#二维随机变量及其联合分布函数)。
+关于随机变量、分布函数与多维随机变量的基础定义，可分别参阅 [随机变量及其分布函数](/概率论/random-variables-and-distributions#随机变量) 和 [二维随机变量及其联合分布函数](/概率论/multivariate-random-variables-and-distributions#二维随机变量及其联合分布函数)。
 
 ## 样本和样本空间
 
@@ -27,7 +27,7 @@ tags:
 - **同分布性**：$X_1,X_2,\cdots,X_n$ 都与 $X$ 服从相同的分布。
 - **独立性**：$X_1,X_2,\cdots,X_n$ 相互独立。
 
-独立随机变量的联合分布函数与联合概率密度可分解为各边缘分布的乘积，详见 [二维随机变量的独立性](/概率论/multivariate-random-variables-and-distributions/#二维随机变量的独立性)。
+独立随机变量的联合分布函数与联合概率密度可分解为各边缘分布的乘积，详见 [二维随机变量的独立性](/概率论/multivariate-random-variables-and-distributions#二维随机变量的独立性)。
 
 ## 统计量
 
@@ -55,7 +55,7 @@ $$
 
 $\bar{X}$ 的样本值记为 $\bar{x}$。样本均值是随机变量，具有分布，数学期望则是常数。在适当条件下，样本均值依概率收敛到数学期望。
 
-数学期望、方差及其性质可参阅 [数学期望](/概率论/numerical-characteristics-of-random-variables/#数学期望) 与 [方差](/概率论/numerical-characteristics-of-random-variables/#方差)。
+数学期望、方差及其性质可参阅 [数学期望](/概率论/numerical-characteristics-of-random-variables#数学期望) 与 [方差](/概率论/numerical-characteristics-of-random-variables#方差)。
 
 #### 样本方差
 
@@ -180,7 +180,7 @@ $$
 
 ## 正态分布
 
-正态分布的定义、密度函数与标准化可参阅 [正态分布](/概率论/random-variables-and-distributions/#正态分布)。
+正态分布的定义、密度函数与标准化可参阅 [正态分布](/概率论/random-variables-and-distributions#正态分布)。
 
 若随机变量 $X_1,X_2,\cdots,X_n$ 相互独立，且
 

@@ -150,7 +150,7 @@ $$
 $$
 
 ### 用频率估计概率
-设进行 $n$ 次相互独立的伯努利试验，$\eta_n$ 表示成功次数，成功概率为 $p$，并记 $q=1-p$。切比雪夫不等式可给出概率界；当 $n$ 足够大时，中心极限定理可给出频率的渐近正态近似，但在较小的 $n$ 或 $p$ 接近 $0$、$1$ 时不一定更精确。
+设进行 $n$ 次相互独立的伯努利试验，$\eta_n$ 表示成功次数，成功概率为 $p$，并记 $q=1-p$。切比雪夫不等式可给出概率界，当 $n$ 足够大时，中心极限定理可给出频率的渐近正态近似，但在较小的 $n$ 或 $p$ 接近 $0$、$1$ 时不一定更精确。
 
 $$
 \begin{aligned} &P\left\{\left|\dfrac{\eta_{n}}{n}-p\right|<\varepsilon\right\}\\ =&P\left\{\left|\dfrac{\eta_{n}-n p}{n}\right|<\varepsilon\right\} \\ =&P\left\{-\varepsilon \sqrt{\dfrac{n}{p q}}<\dfrac{\eta_{n}-n p}{\sqrt{n p q}}<\varepsilon \sqrt{\dfrac{n}{p q}}\right\} \\ \approx &\Phi\left(\varepsilon \sqrt{\dfrac{n}{p q}}\right)-\Phi\left(-\varepsilon \sqrt{\dfrac{n}{p q}}\right)\\ =& 2 \Phi\left(\varepsilon \sqrt{\dfrac{n}{p q}}\right)-1 \end{aligned}

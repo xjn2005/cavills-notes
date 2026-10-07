@@ -19,8 +19,8 @@ tags:
 
 并非 $\Omega$ 的每个子集都必须被赋予概率。我们选取一个由事件组成的集合族 $\mathcal F$，要求：
 
-1. $\Omega\in\mathcal F$；
-2. 若 $A\in\mathcal F$，则 $\overline A\in\mathcal F$；
+1. $\Omega\in\mathcal F$，
+2. 若 $A\in\mathcal F$，则 $\overline A\in\mathcal F$，
 3. 若 $A_1,A_2,\ldots\in\mathcal F$，则
    $\displaystyle\bigcup_{i=1}^{\infty}A_i\in\mathcal F$。
 
