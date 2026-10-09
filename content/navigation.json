@@ -26,6 +26,13 @@
     ]
   },
   {
+    "title": "数据结构与算法",
+    "collapsible": true,
+    "children": [
+      { "title": "图论基础与算法", "path": "/数据结构与算法/graph-theory/" }
+    ]
+  },
+  {
     "title": "Nano2Tetris",
     "collapsible": true,
     "children": [
@@ -56,7 +63,8 @@
     "title": "实变函数",
     "collapsible": true,
     "children": [
-      { "title": "前置知识", "path": "/实变函数/前置知识/" }
+      { "title": "前置知识", "path": "/实变函数/前置知识/" },
+      { "title": "第一章", "path": "/实变函数/第一章/" }
     ]
   }
 ]

@@ -14,6 +14,18 @@
   margin-bottom: 0;
 }
 
+.main-content .docmd-container.callout-example {
+  --callout-color: #7c3aed;
+  border-color: #7c3aed;
+  background: rgb(124 58 237 / 8%);
+}
+
+.main-content .docmd-container.callout-note {
+  --callout-color: #3498db;
+  border-color: #3498db;
+  background: rgb(52 152 219 / 8%);
+}
+
 .toc-level-2 {
   padding-left: 1rem;
 }

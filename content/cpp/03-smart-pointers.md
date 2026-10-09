@@ -112,7 +112,7 @@ std::weak_ptr<int> observer = ptr;
 ```
 
 `weak_ptr`不能直接使用 `*` 或 `->`。而且必须调用 `lock()` 获得一个 `shared_ptr` 后才能访问对象。
-::: callout info "Example" icon:list
+::: callout example "Example" icon:list
 
 ```cpp
 auto ptr = std::make_shared<int>(42);
