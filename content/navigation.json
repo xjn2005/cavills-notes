@@ -26,13 +26,6 @@
     ]
   },
   {
-    "title": "数据结构与算法",
-    "collapsible": true,
-    "children": [
-      { "title": "图论基础与算法", "path": "/数据结构与算法/graph-theory/" }
-    ]
-  },
-  {
     "title": "Nano2Tetris",
     "collapsible": true,
     "children": [
